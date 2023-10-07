@@ -1,8 +1,8 @@
-# Calculator
+# Calculator➕➖➗✖️📱
 
 Welcome to my Calculator project! This is a simple calculator application that can perform basic arithmetic operations.
 
-## Features
+## Features📲
 - Addition
 - Subtraction
 - Multiplication
