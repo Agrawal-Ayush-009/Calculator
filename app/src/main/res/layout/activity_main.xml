@@ -1,0 +1,336 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ScrollView
+        android:id="@+id/Scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarStyle="outsideInset"
+        app:layout_constraintBottom_toTopOf="@+id/backSpace"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="right"
+                android:textSize="50dp"
+                />
+
+            <TextView
+                android:id="@+id/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="right"
+                android:textSize="60dp"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        app:layout_constraintBottom_toTopOf="@+id/oneRow"
+        app:layout_constraintRight_toRightOf="@id/oneRow"
+        android:id="@+id/backSpace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="backSpace"
+        android:tag="B"
+        android:src="@drawable/baseline_backspace_24"
+        />
+    <TableRow
+        android:id="@+id/oneRow"
+        app:layout_constraintBottom_toTopOf="@+id/twoRow"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:textColor="@color/black"
+            android:id="@+id/clearText"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:text="C"
+            android:onClick="clear"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/custom_button"
+            android:gravity="center"
+            android:text="+/-"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button"
+            android:gravity="center"
+            android:text="%"
+            android:layout_margin="10dp"
+            android:textSize="30sp" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:onClick="operator"
+            android:background="@drawable/custom_button2"
+            android:gravity="center"
+            android:text="÷"
+            android:tag="/"
+            android:layout_margin="10dp"
+            android:textSize="30sp" />
+
+    </TableRow>
+    <TableRow
+        android:id="@+id/twoRow"
+        app:layout_constraintBottom_toTopOf="@+id/threeRow"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button1"
+            android:gravity="center"
+            android:text="7"
+            android:onClick="onTap"
+            android:layout_margin="10dp"
+            android:textColor="#ffff"
+            android:textSize="30sp"
+            android:tag="7"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button1"
+            android:gravity="center"
+            android:text="8"
+            android:onClick="onTap"
+            android:textColor="#ffff"
+            android:layout_margin="10dp"
+            android:textSize="30sp"
+            android:tag="8"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/custom_button1"
+            android:gravity="center"
+            android:onClick="onTap"
+            android:tag="9"
+            android:text="9"
+            android:textColor="#ffff"
+            android:textSize="30sp" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/roboto"
+            android:onClick="operator"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button2"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="×"
+            android:tag="*"
+            android:layout_margin="10dp"
+            android:textSize="30sp" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/threeRow"
+        app:layout_constraintBottom_toTopOf="@+id/fourRow"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button1"
+            android:gravity="center"
+            android:text="4"
+            android:textColor="#ffff"
+            android:layout_margin="10dp"
+            android:textSize="30sp"
+            android:onClick="onTap"
+            android:tag="4"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button1"
+            android:gravity="center"
+            android:text="5"
+            android:onClick="onTap"
+            android:textColor="#ffff"
+            android:layout_margin="10dp"
+            android:textSize="30sp"
+            android:tag="5"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button1"
+            android:gravity="center"
+            android:text="6"
+            android:textColor="#ffff"
+            android:onClick="onTap"
+            android:layout_margin="10dp"
+            android:textSize="30sp"
+            android:tag="6"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            android:onClick="operator"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button2"
+            android:gravity="center"
+            android:text="-"
+            android:tag="-"
+            android:layout_margin="10dp"
+            android:textSize="30sp" />
+
+    </TableRow>
+    <TableRow
+        android:id="@+id/fourRow"
+        app:layout_constraintBottom_toTopOf="@+id/fiveRow"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button1"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#ffff"
+            android:layout_margin="10dp"
+            android:textSize="30sp"
+            android:onClick="onTap"
+            android:tag="1"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button1"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="#ffff"
+            android:layout_margin="10dp"
+            android:onClick="onTap"
+            android:textSize="30sp"
+            android:tag="2"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button1"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="#ffff"
+            android:layout_margin="10dp"
+            android:onClick="onTap"
+            android:textSize="30sp"
+            android:tag="3"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            android:onClick="operator"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button2"
+            android:gravity="center"
+            android:text="+"
+            android:tag="+"
+            android:layout_margin="10dp"
+            android:textSize="30sp" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/fiveRow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/roboto"
+            android:layout_width="170dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button0"
+            android:gravity="center"
+            android:text="0"
+            android:tag="0"
+            android:textColor="#ffff"
+            android:layout_margin="10dp"
+            android:onClick="onTap"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button1"
+            android:gravity="center"
+            android:tag="."
+            android:text="."
+            android:textColor="#ffff"
+            android:layout_margin="10dp"
+            android:textSize="30sp" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/custom_button2"
+            android:gravity="center"
+            android:text="="
+            android:onClick="result"
+            android:layout_margin="10dp"
+            android:textSize="30sp" />
+    </TableRow>
+</androidx.constraintlayout.widget.ConstraintLayout>
