@@ -7,7 +7,8 @@
         </shape>
     </item>
     <item android:state_pressed = "true">
-        <shape android:shape = "oval">
+        <shape android:shape = "rectangle">
+            <corners android:radius="120dp"/>
             <solid android:color = "#666666"/>
         </shape>
     </item>
